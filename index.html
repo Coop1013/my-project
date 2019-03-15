@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="master.css">
+    <link href="data:image/x-icon;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQEAYAAABPYyMiAAAABmJLR0T///////8JWPfcAAAACXBIWXMAAABIAAAASABGyWs+AAAAF0lEQVRIx2NgGAWjYBSMglEwCkbBSAcACBAAAeaR9cIAAAAASUVORK5CYII=" rel="icon" type="image/x-icon"/>
+  </head>
+  <body>
+     <script language=javascript>
+    var rev = "fwd";
+    function titlebar(val){
+        var msg  = "$ Cooper $";
+        var res = " ";
+        var speed = 50;
+        var pos = val;
+        msg = "   |-"+msg+"-|";
+        var le = msg.length;
+        if(rev == "fwd"){
+            if(pos < le){
+                pos = pos+1;
+                scroll = msg.substr(0,pos);
+                document.title = scroll;
+                timer = window.setTimeout("titlebar("+pos+")",speed);
+            }
+            else {
+                rev = "bwd";
+                timer = window.setTimeout("titlebar("+pos+")",speed);
+            }
+        }
+        else {
+            if(pos > 0) {
+                pos = pos-1;
+                var ale = le-pos;
+                scrol = msg.substr(ale,le);
+                document.title = scrol;
+                timer = window.setTimeout("titlebar("+pos+")",speed);
+            }
+            else {
+                rev = "fwd";
+                timer = window.setTimeout("titlebar("+pos+")",speed);
+            }
+        }
+    }
+    titlebar(0);
+</script>
+    <iframe src="silence.mp3" allow="autoplay" id="audio" style="display:none"></iframe>
+      <video playsinline autoplay loop id="vid">
+        <source src="attitude.mp4" type="video/mp4">
+        <script>
+          var video = document.currentScript.parentElement;
+          video.volume = 0.333;
+        </script>
+      </video>
+
+    <div class="font-left">
+        <br><a style="font-size: 1vw;" class="font-light font-white" target="_blank" href="https://discord.gg/fsTtNRf">discord.gg/fsTtNRf</a>
+        <br><a style="font-size: 1vw;" class="font-light font-white" target="_blank" href="https://twitter.com/smef">twitter.com/smef</a>
+        <br><a style="font-size: 1vw;" class="font-light font-white" target="_blank" href="https://youtube.com/smefpw">youtube.com/smefpw</a>
+    </div>
+  </body>
+</html>
